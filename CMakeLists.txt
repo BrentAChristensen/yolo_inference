@@ -7,18 +7,12 @@ find_package(rclpy REQUIRED) # For Python nodes
 find_package(std_msgs REQUIRED) # Example dependency, adjust as necessary
 
 # Install Python scripts
-install(
-  PROGRAMS
-  yolo_inference/yolo_inference/yolo_inference_node.py  # Add your scripts here
-    # Add more scripts if needed
+install(PROGRAMS
+  scripts/yolo_inference_node.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
-# Install the icons directory
-install(DIRECTORY resource/icons
-  DESTINATION share/${PROJECT_NAME}/resource/
-  FILES_MATCHING PATTERN "*.png"  # Adjust this pattern as needed to match your icon files
-)
+
 
 # Optionally install configuration files, data, etc.
 # install(FILES resource/icons/impact_rqt_joint_states.png
